@@ -2,7 +2,7 @@ const express = require('express');
 const {Client} = require('pg');
 
 const client = new Client({
-  connectionString: process.env.https://ftp-guilds.herokuapp.com/
+  connectionString: process.env.ftp-guilds.herokuapp.com
 });
 
 client.connect();
