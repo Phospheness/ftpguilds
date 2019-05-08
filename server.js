@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/query', (req, res) => {
+app.post('/guilds', (req, res) => {
   res.SetHeader('Content-Type', 'application/json');
   //console.log("currently recieveing the request because joseph is gay");
   if(req.body.query){
