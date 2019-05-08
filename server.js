@@ -16,17 +16,19 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-if (process.env.NODE_ENV === 'production') {
-  // Exprees will serve up production assets
-  app.use(express.static('client/build'));
+//if(process.env.NODE_ENV === "production"){
+//    app.use(express.static('client/build'));
+//    const path = require("path")
+//    app.get("*", (req, res) => {
+//        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//    });
+//}
+var express = require('express');  
+var router = express.Router();
 
-  // Express serve up index.html file if it doesn't recognize route
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
-
+router.get('/', function(req, res, next) {  
+      res.status(200).send("Hi, It works!")  
+});  
 //Handle a post request at /guilds
 app.post('/query', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
