@@ -16,10 +16,6 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 //Handle a post request at /guilds
 app.post('/query', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
