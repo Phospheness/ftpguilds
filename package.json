@@ -1,6 +1,6 @@
 {
-  "name": "FTP-Guilds",
-  "description": "FTP Guilds v2",
+  "name": "robloxsql",
+  "description": "Roblox SQL server example",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
