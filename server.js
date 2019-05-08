@@ -16,11 +16,9 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-if(process.env.NODE_ENV === 'production'){
-    //set static folder
-    app.use(express.static('client/build'));
-}
-
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 //Handle a post request at /guilds
 app.post('/query', (req, res) => {
