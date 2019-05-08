@@ -1,14 +1,13 @@
 {
-	"name": "ftp-guilds",
-	"description": "Guild Datastore",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"dependancies": {
-		"express": "4.x.x",
-		"pg": "7.x.x",
-		"body-parser": "1.18.x"
-	}
+  "name": "FTP-Guilds",
+  "description": "FTP Guilds v2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.x.x",
+    "pg": "7.x.x",
+    "body-parser": "1.18.x"
+  }
 }
-	
