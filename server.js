@@ -15,8 +15,8 @@ const app = express();
 
 // parse application/json
 app.use(bodyParser.json());
- 
-//Handle a post request at /guilds
+
+//Handle a post request at /query
 app.post('/query', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     console.log("Receiving request");
