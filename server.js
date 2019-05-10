@@ -54,7 +54,9 @@ app.get('/client/guilds.php', function(req, res){
         });
     });
 });
-    
+app.get('/question/iskamalstraight?/', function(req, res){
+    res.send('no')
+});
 
 const port = process.env.PORT || 3306
 //Start listening
