@@ -54,7 +54,7 @@ app.get('/client/guilds.php', function(req, res){
         });
     });
 });
-app.get('/question/iskamalstraight?/', function(req, res){
+app.get('/question/iskamalstraight', function(req, res){
     res.send('no')
 });
 
