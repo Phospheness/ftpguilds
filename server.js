@@ -30,9 +30,10 @@ app.post('/query', (req, res) => {
     }
 });
 //get stuff
-app.get('/client', function(req, res){
-    res.send('id: ' + req.query.id);
+app.get('/', function(req, res){
+    res.send('lol gay');
 });
+
     
 
 const port = process.env.PORT || 8080
