@@ -30,13 +30,33 @@ app.post('/query', (req, res) => {
     }
 });
 //get stuff
-app.get('/', function(req, res){
+app.get('/josephssexuality', function(req, res){
     res.send('lol gay');
 });
 
+app.get('/client/guilds.php', function(req, res){
+    var sql = require('mysql');
+    
+    var config = {
+        user:'sql2291275',
+        password: 'xV5%tZ3!',
+        server: "sql12.freesqldatabase.com",
+        database: 'sql2291275'
+    };
+    
+    sql.connect(config, function(err){
+        if (err) console.log(err);
+        
+        var request = new sql.Request();
+        request.query('select * from guilds', function(err, recordset){
+            if (err) console.log(err);
+            res.send(recordset);
+        });
+    });
+});
     
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
    console.log("App listening at ${host}")
