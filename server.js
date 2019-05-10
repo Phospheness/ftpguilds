@@ -34,7 +34,11 @@ app.post('/query', (req, res) => {
         });
     }
 });
-
+//get stuff
+app.get('/client', function(req, res){
+    res.send('id: ' + req.query.id)'
+});
+    
 
 const port = process.env.PORT || 8080
 //Start listening
