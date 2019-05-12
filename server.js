@@ -35,7 +35,7 @@ app.get('/josephssexuality', function(req, res){
 });
 
 app.get('/client/guilds.php', function(req, res){
-    var sql = require('mysql');
+    var sql = require('mssql');
     //https://www.tutorialsteacher.com/nodejs/access-sql-server-in-nodejs
     var config = {
         user:'sql2291275',
