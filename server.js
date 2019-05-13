@@ -37,8 +37,8 @@ app.get('/client/groups.php', function(req, res){
         res.send(rows); 
     });
 });
-app.get('/client/getgroupinfo.php?gid/:id', function(req, res){
-    var Lawa = req.params.id;
+app.get('/client/getgroupinfo.php', function(req, res){
+    var Lawa = req.query.gid;
     connection.connect();
     connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
         connection.end();
@@ -46,7 +46,11 @@ app.get('/client/getgroupinfo.php?gid/:id', function(req, res){
         res.send(rows);
     });
 });
+app.get('/p', function(req, res) {
+  res.send("tagId is set to " + req.query.tagId);
+});
 
+// GET /p?tagId=5
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
