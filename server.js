@@ -38,8 +38,12 @@ app.get('/client/guilds.php', function(req, res){
     });
 });
 
-app.get('/question/iskamalstraight', function(req, res){
-    res.send('no')
+app.get('/client/getgroupinfo.php?gid=:id, function(req, res){
+    connection.connect();
+    req.query('SELECT ' + req.params.id + ' FROM guilds', function(err, rows, fields){
+        if (err) throw err;
+        res.send(rows);
+    });
 });
 
 const port = process.env.PORT || 3306
