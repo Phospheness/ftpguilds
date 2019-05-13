@@ -38,8 +38,9 @@ app.get('/client/guilds.php', function(req, res){
     });
 });
 
-app.get('/lol=', function(req, res){
-  res.send('id: ' + req.query);
+app.get('/lol=:id', function(req, res){
+    var lol = req.params.id;
+    res.send('id: ' + lol);
 });
 
 
