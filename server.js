@@ -38,9 +38,14 @@ app.get('/client/guilds.php', function(req, res){
     });
 });
 
-app.get('/lol=:id', function(req, res){
+app.get('/client/getgroupinfo.php?gid=:id', function(req, res){
     var lol = req.params.id;
-    res.send('id: ' + lol);
+    connection.connnect();
+    connection.query('SELECT ' + lol + ' FROM guilds', function(error, rows, fields){
+        connection.end();
+        if (error) throw error;
+        res.send(rows)
+    });
 });
 
 
