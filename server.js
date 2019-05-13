@@ -40,7 +40,7 @@ app.get('/client/groups.php', function(req, res){
 app.get('/client/getgroupinfo.php', function(req, res){
     var Lawa = req.query.gid;
     connection.connect();
-    connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
+    connection.query('SELECT * FROM ' + Lawa + '-Members', function(err, rows, fields){
         connection.end();
         if (err) throw err;
         res.send(rows);
