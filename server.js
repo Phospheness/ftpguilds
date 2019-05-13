@@ -34,7 +34,7 @@ app.get('/client/groups.php', function(req, res){
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
         connection.end();
         if (err) throw err;  
-        res.send(rows); 
+        res.json(rows); 
     });
 });
 app.get('/client/getgroupinfo.php', function(req, res){
@@ -43,7 +43,7 @@ app.get('/client/getgroupinfo.php', function(req, res){
     connection.query('SELECT * FROM `' + Lawa + '-Members`', function(err, rows, fields){
         connection.end();
         if (err) throw err;
-        res.send(rows);
+        res.json(rows);
     });
 });
 
