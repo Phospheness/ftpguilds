@@ -46,11 +46,7 @@ app.get('/client/getgroupinfo.php', function(req, res){
         res.send(rows);
     });
 });
-app.get('/p', function(req, res) {
-  res.send("tagId is set to " + req.query.tagId);
-});
 
-// GET /p?tagId=5
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
