@@ -39,25 +39,23 @@ app.get('/islawagay', function(req, res){
 });
 
 app.get('/client/guilds.php', function(req, res){
-    var sql = require('mssql');
-    //https://www.tutorialsteacher.com/nodejs/access-sql-server-in-nodejs
-    var config = {
-        user:'sql2291275',
-        password: 'xV5%tZ3!',
-        server: "sql12.freesqldatabase.com",
-        database: 'sql2291275'
-    };
-    
-    sql.connect(config, function(err){
-        if (err) console.log(err);
-        
-        var request = new sql.Request();
-        request.query('select * from guilds', function(err, recordset){
-            if (err) console.log(err);
-            res.send(recordset);
-        });
+    var sql = require('mysql');
+    var connection = mysql.createConnection({
+        host: 'sql2.freesqldatabase.com',
+        user: 'sql2291504',
+        password: 'sI9!pB4%',
+        database: 'sql2291504'
     });
+    
+    connection.connect()
+    
+    connection.query('SELECT * FROM guilds', function(err, rows, fields){
+        if (err) throw err
+        console.log('CONNECTION SUCCESSFUL')
+    })
+    connection.end()
 });
+
 app.get('/question/iskamalstraight', function(req, res){
     res.send('no')
 });
