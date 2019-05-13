@@ -10,8 +10,8 @@ client.connect();
 const bodyParser = require('body-parser');
 const app = express();
 
-var sql = require('mysql');
-var connection = sql.createConnection({
+var mysql = require('mysql');
+var connection = mysql.createConnection({
     host: 'sql2.freesqldatabase.com',
     user: 'sql2291504',
     password: 'sI9!pB4%',
