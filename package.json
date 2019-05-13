@@ -1,6 +1,6 @@
 {
-  "name": "robloxsql",
-  "description": "Roblox SQL server example",
+  "name": "ftpguilds",
+  "description": "Guild system for Fairy Tail; Project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
