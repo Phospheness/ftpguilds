@@ -37,8 +37,8 @@ app.get('/client/groups.php', function(req, res){
         res.send(rows); 
     });
 });
-app.get('/client/getgroupinfo.php?gid=:Eye', function(req, res){
-    var Lawa = req.params.Eye;
+app.get('/client/getgroupinfo.php?gid=:id', function(req, res){
+    var Lawa = req.params.id;
     connection.connect();
     connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
         connection.end();
