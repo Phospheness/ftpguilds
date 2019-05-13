@@ -28,7 +28,7 @@ app.get('/islawagay', function(req, res){
     res.send('FUXCK LAWA DUMB N WORD FAGGOT NOOB STUPID');
 });
 
-app.get('/client/guilds.php', function(req, res){
+app.get('/client/groups.php', function(req, res){
     connection.connect();  
 
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
@@ -38,16 +38,15 @@ app.get('/client/guilds.php', function(req, res){
     });
 });
 
-app.get('/client/getgroupinfo.php?gid=:STUFF', function(req, res){
-    var lol = req.params.STUFF;
-    connection.connnect();
-    connection.query('SELECT ' + lol + ' FROM guilds', function(error, rows, fields){
+app.get('client/getgroupinfo.php?gid=:Eye', function(req, res){
+    var Lawa = req.params.Eye;
+    connection.connect();
+    connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
         connection.end();
-        if (error) throw error;
+        if (err) throw err;
         res.send(rows)
     });
 });
-
 
 const port = process.env.PORT || 3306
 //Start listening
