@@ -34,7 +34,7 @@ app.get('/client/guilds.php', function(req, res){
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
         connection.end();
         if (err) throw err;  
-        res.json(rows); 
+        res.send(rows); 
     });
 });
 
