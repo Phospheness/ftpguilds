@@ -10,6 +10,14 @@ client.connect();
 const bodyParser = require('body-parser');
 const app = express();
 
+var sql = require('mysql');
+var connection = sql.createConnection({
+    host: 'sql2.freesqldatabase.com',
+    user: 'sql2291504',
+    password: 'sI9!pB4%',
+    database: 'sql2291504'
+});
+
 app.use(bodyParser.json());
 
 app.post('/query', (req, res) => {
@@ -39,13 +47,6 @@ app.get('/islawagay', function(req, res){
 });
 
 app.get('/client/guilds.php', function(req, res){
-    var sql = require('mysql');
-    var connection = mysql.createConnection({
-        host: 'sql2.freesqldatabase.com',
-        user: 'sql2291504',
-        password: 'sI9!pB4%',
-        database: 'sql2291504'
-    });
     connection.connect();  
 
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
