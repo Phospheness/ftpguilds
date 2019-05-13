@@ -38,7 +38,7 @@ app.get('/client/groups.php', function(req, res){
     });
 });
 
-app.get('client/getgroupinfo.php?gid=:Eye', function(req, res){
+app.get('/client/getgroupinfo.php?gid=:Eye', function(req, res){
     var Lawa = req.params.Eye;
     connection.connect();
     connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
