@@ -46,14 +46,13 @@ app.get('/client/guilds.php', function(req, res){
         password: 'sI9!pB4%',
         database: 'sql2291504'
     });
-    
-    connection.connect()
-    
-    connection.query('SELECT * FROM guilds', function(err, rows, fields){
-        if (err) throw err
-        console.log('CONNECTION SUCCESSFUL')
-    })
-    connection.end()
+    connection.connect();  
+
+    connection.query('SELECT * FROM guilds', function(err, rows, fields){  
+        connection.end();
+        if (err) throw err;  
+        res.json(rows); 
+    });
 });
 
 app.get('/question/iskamalstraight', function(req, res){
