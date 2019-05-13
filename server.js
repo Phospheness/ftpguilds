@@ -37,7 +37,15 @@ app.get('/client/groups.php', function(req, res){
         res.send(rows); 
     });
 });
-
+app.get('/client/getgroupinfo.php?gid=:Eye', function(req, res){
+    var Lawa = req.params.Eye;
+    connection.connect();
+    connection.query('SELECT ' + Lawa + ' FROM guilds', function(err, rows, fields){
+        connection.end();
+        if (err) throw err;
+        res.send(rows);
+    });
+});
 
 const port = process.env.PORT || 3306
 //Start listening
