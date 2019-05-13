@@ -34,6 +34,10 @@ app.get('/josephssexuality', function(req, res){
     res.send('lol gay');
 });
 
+app.get('/islawagay', function(req, res){
+    res.send('FUXCK LAWA DUMB N WORD FAGGOT NOOB STUPID');
+});
+
 app.get('/client/guilds.php', function(req, res){
     var sql = require('mssql');
     //https://www.tutorialsteacher.com/nodejs/access-sql-server-in-nodejs
