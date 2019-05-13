@@ -38,13 +38,10 @@ app.get('/client/guilds.php', function(req, res){
     });
 });
 
-app.get('/client/getgroupinfo.php?gid=:id, function(req, res){
-    connection.connect();
-    req.query('SELECT ' + req.params.id + ' FROM guilds', function(err, rows, fields){
-        if (err) throw err;
-        res.send(rows);
-    });
+app.get('/lol', function(req, res){
+  res.send('id: ' + req.query.id);
 });
+
 
 const port = process.env.PORT || 3306
 //Start listening
