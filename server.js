@@ -36,6 +36,7 @@ app.get('/client/groups.php', function(req, res){
         if (err) throw err;  
         res.json(rows); 
     });
+    connection.end();
 });
 app.get('/client/getgroupinfo.php', function(req, res){
     var Lawa = req.query.gid;
@@ -45,6 +46,7 @@ app.get('/client/getgroupinfo.php', function(req, res){
         if (err) throw err;
         res.json(rows);
     });
+    connection.end();
 });
 app.get('/client/isingroup.php', function(request, results){
     var Lawa = request.query.gid;
@@ -54,6 +56,7 @@ app.get('/client/isingroup.php', function(request, results){
         if(err) throw err;
         results.json(rows);
     });
+    connection.end();
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
 
