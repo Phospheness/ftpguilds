@@ -50,7 +50,7 @@ app.get('/client/isingroup.php', function(request, results){
     var Lawa = request.query.gid;
     var Zubair = request.query.pid;
     connection.connect();
-    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(err, rows, fields){
+    connection.query('SELECT * FROM `'+Lawa+'-Members` WHERE `id` = ' + Zubair, function(err, rows, fields){
         if(err) throw err;
         results.json(rows);
     });
