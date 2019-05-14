@@ -57,6 +57,7 @@ app.get('/client/isingroup.php', function(req, res){
         res.json(results);
     });
 });
+//IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
 
 const port = process.env.PORT || 3306
 //Start listening
