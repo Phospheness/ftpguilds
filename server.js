@@ -28,7 +28,7 @@ app.get('/josephssexuality', function(req, res){
 app.get('/islawagay', function(req, res){
     res.send('FUXCK LAWA DUMB N WORD FAGGOT NOOB STUPID');
 });
-
+//Displays all guilds within the SQL database.
 app.get('/client/groups.php', function(req, res){
     connection.connect();  
     connection.query('SELECT * FROM `guilds`', function(err, rows, fields){  
@@ -38,6 +38,7 @@ app.get('/client/groups.php', function(req, res){
     });
     connection.end();
 });
+//Gets specific info about a guild via it's ID
 app.get('/client/getgroupinfo.php', function(req, res){
     var Lawa = req.query.gid;
     connection.connect();
@@ -48,6 +49,7 @@ app.get('/client/getgroupinfo.php', function(req, res){
     });
     connection.end();
 });
+//Gets a specific PLAYER in a guild, will error if it doesnt exist (maybe?)
 app.get('/client/isingroup.php', function(request, results){
     var Lawa = request.query.gid;
     var Zubair = request.query.pid;
@@ -58,7 +60,7 @@ app.get('/client/isingroup.php', function(request, results){
     });
     connection.end();
 });
-//IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
+//IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END //big fat sql code for gays
 
 const port = process.env.PORT || 3306
 //Start listening
