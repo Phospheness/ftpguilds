@@ -41,10 +41,11 @@ app.get('/client/groups.php', function(req, res){
 app.get('/client/getgroupinfo.php', function(req, res){
     var Lawa = req.query.gid;
     connection.connect();
-    connection.query('SELECT * FROM `guilds` WHERE `id` = ' + Lawa, function(err, rows,fields){
+    connection.query('SELECT * FROM `guilds` WHERE `id` = ' + Lawa + '; SELECT * FROM `' + Lawa + '-Members`', [2,1], function(err, rows,fields){
        // connection.end();
         if (err) throw err;
-        res.json(rows);
+        res.json(rows[0]);
+        res.json(rows[1]);
     });
 });
 
