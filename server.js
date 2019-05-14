@@ -31,7 +31,6 @@ app.get('/islawagay', function(req, res){
 
 app.get('/client/groups.php', function(req, res){
     connection.connect();  
-
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
         //connection.end();
         if (err) throw err;  
@@ -48,13 +47,13 @@ app.get('/client/getgroupinfo.php', function(req, res){
     });
 });
 
-app.get('/client/isingroup.php', function(req, res){
-    var Lawa = req.query.gid;
-    var Zubair = req.query.pid;
+app.get('/client/isingroup.php', function(request, results){
+    var lawa = request.query.gid;
+    var zubair = request.query.pid;
     connection.connect();
-    connection.query('SELECT * FROM `'+Lawa+'-Members` WHERE `id` = ' + Zubair, function(error, results, fields){
-        if (error) throw error;
-        res.json(results);
+    connection.query('SELECT * FROM `' + lawa + '-Members` WHERE `id` = ' + zubair, function(error, rwos, fields){
+        if(error) throw error;
+        res.json(rwos);
     });
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
