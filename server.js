@@ -48,6 +48,16 @@ app.get('/client/getgroupinfo.php', function(req, res){
     });
 });
 
+app.get('client/isingroup.php', function(req, res){
+    var Lawa = req.query.gid;
+    var Zubair = req.query.pid;
+    connection.connect();
+    connection.query('SELECT * FROM `' + Lawa + '-Members` WHERE `id` = ' + Zubair, function(error, results, fields){
+        if (error) throw error;
+        res.json(results);
+    });
+});
+
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
