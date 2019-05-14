@@ -48,7 +48,7 @@ app.get('/client/getgroupinfo.php', function(req, res){
     });
 });
 
-app.get('client/isingroup.php', function(req, res){
+app.get('/client/isingroup.php', function(req, res){
     var Lawa = req.query.gid;
     var Zubair = req.query.pid;
     connection.connect();
