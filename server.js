@@ -55,7 +55,7 @@ app.get('/client/isingroup.php', function(req, res){
     connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(error, results, fields){
         if (error) throw error;
         res.json(results);
-        res.send('YES')
+        res.send('YES');
     });
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
