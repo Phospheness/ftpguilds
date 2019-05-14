@@ -51,16 +51,24 @@ app.get('/client/isingroup.php', function(request, results){
     var Lawa = request.query.gid;
     var Zubair = request.query.pid;
     connection.connect();
-    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(error, rwos, fields){
-        if(error) throw error;
-        res.json(rwos);
+    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(err, rows, fields){
+        if(err) throw err;
+        res.json(rows);
     });
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
-
-
-
-
+//INSERT INTO `0-Members` (`name`, `id`, `rank`) VALUES ('gay', '69', '1');
+app.get('/client/join.php', function(req, res){
+    var Lawa = req.query.gid;
+    var Zubair = req.query.pid;
+    var Rathod = req.query.pname;
+    connection.connect();
+    connection.query('INSERT INTO `'+Lawa'-Members` (`name`, `id`, `rank`) VALUES ("' + Rathod + '", "' + Zubair + '", "1")', function(err, rows, fields){
+        if (err) throw err;
+        res.send('Success! Check the table to manually check.')
+    });
+});
+        
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
