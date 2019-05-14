@@ -65,7 +65,7 @@ app.get('/client/join.php', function(req, res){
     connection.connect();
     connection.query('INSERT INTO `'+Lawa'-Members` (`name`, `id`, `rank`) VALUES ("' + Rathod + '", "' + Zubair + '", "1")', function(err, rows, fields){
         if (err) throw err;
-        res.send('Success! Check the table to manually check.')
+        res.send('Success! Check the table to manually check.');
     });
 });
         
