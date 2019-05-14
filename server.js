@@ -52,9 +52,10 @@ app.get('/client/isingroup.php', function(req, res){
     var Lawa = req.query.gid;
     var Zubair = req.query.pid;
     connection.connect();
-    connection.query('IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = `'+Lawa+'-Members`) BEGIN PRINT 'YES' ELSE PRINT'NO' END', function(error, results, fields){
+    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(error, results, fields){
         if (error) throw error;
         res.json(results);
+        res.send('YES')
     });
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
