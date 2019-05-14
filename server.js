@@ -48,10 +48,10 @@ app.get('/client/getgroupinfo.php', function(req, res){
 });
 
 app.get('/client/isingroup.php', function(request, results){
-    var lawa = request.query.gid;
-    var zubair = request.query.pid;
+    var Lawa = request.query.gid;
+    var Zubair = request.query.pid;
     connection.connect();
-    connection.query('SELECT * FROM `' + lawa + '-Members` WHERE `id` = ' + zubair, function(error, rwos, fields){
+    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(error, rwos, fields){
         if(error) throw error;
         res.json(rwos);
     });
