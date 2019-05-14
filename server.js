@@ -33,7 +33,7 @@ app.get('/client/groups.php', function(req, res){
     connection.connect();  
 
     connection.query('SELECT * FROM guilds', function(err, rows, fields){  
-        connection.end();
+        //connection.end();
         if (err) throw err;  
         res.json(rows); 
     });
@@ -42,10 +42,9 @@ app.get('/client/getgroupinfo.php', function(req, res){
     var Lawa = req.query.gid;
     connection.connect();
     connection.query('SELECT * FROM `guilds` WHERE `id` = ' + Lawa, function(err, rows,fields){
-        connection.end();
+       // connection.end();
         if (err) throw err;
-        res.json(rows[0]);
-        res.json(rows[1]);
+        res.json(rows);
     });
 });
 
