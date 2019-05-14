@@ -63,12 +63,14 @@ app.get('/client/join.php', function(req, res){
     var Zubair = req.query.pid;
     var Rathod = req.query.pname;
     connection.connect();
-    connection.query('INSERT INTO `'+Lawa'-Members` (`name`, `id`, `rank`) VALUES ("' + Rathod + '", "' + Zubair + '", "1")', function(err, rows, fields){
+    connection.query("INSERT INTO `"+Lawa"-Members` (`name`, `id`, `rank`) VALUES ('"+Rathod+"','"+Zubair+"','1')", function(err){
         if (err) throw err;
         res.send('Success! Check the table to manually check.');
     });
 });
-        
+
+
+
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
