@@ -44,8 +44,8 @@ app.get('/client/getgroupinfo.php', function(req, res){
     connection.query('SELECT * FROM `guilds` WHERE `id` = ' + Lawa + '; SELECT * FROM `' + Lawa + `-Members`' , [1, 2], function(err, rows, fields){
         connection.end();
         if (err) throw err;
+        res.json(rows[0]);
         res.json(rows[1]);
-        res.json(rows[2]);
     });
 });
 
