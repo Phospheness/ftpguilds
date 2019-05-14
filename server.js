@@ -52,21 +52,14 @@ app.get('/client/isingroup.php', function(req, res){
     var Lawa = req.query.gid;
     var Zubair = req.query.pid;
     connection.connect();
-    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(error, results, fields){
+    connection.query('SELECT * FROM `'+Lawa+'-Members` WHERE `id` = ' + Zubair, function(error, results, fields){
         if (error) throw error;
         res.json(results);
     });
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
 
-app.get('/client/isinanygroup.php', function(request, results){
-    var Lawa = req.query.gid;
-    connection.connect();
-    connection.query('SELECT * FROM guilds', function(error, res, fields){
-        if (error) throw error;
-        res.json(res);
-    });
-});
+
 
 
 const port = process.env.PORT || 3306
