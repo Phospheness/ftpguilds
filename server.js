@@ -47,15 +47,6 @@ app.get('/client/getgroupinfo.php', function(req, res){
     });
 });
 
-app.get('/client/isingroup.php', function(request, results){
-    var Lawa = request.query.gid;
-    var Zubair = request.query.pid;
-    connection.connect();
-    connection.query('SELECT * FROM `'+Lawa+'-Members WHERE `id` = ' + Zubair, function(err, rows, fields){
-        if(err) throw err;
-        res.json(rows);
-    });
-});
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END
 //INSERT INTO `0-Members` (`name`, `id`, `rank`) VALUES ('gay', '69', '1');
 app.get('/client/join.php', function(req, res){
