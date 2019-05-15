@@ -63,7 +63,7 @@ app.get('/client/isingroup.php', function(request, results){
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END //big fat sql code for gays
 app.get('/fuckabdullah', function(req, res){
     connection.connect();
-    res.send('fuck youi abdullah go lose weight')
+    res.send('fuck youi abdullah go lose weight'.big();)
     connection.end();
 });
 const port = process.env.PORT || 3306
