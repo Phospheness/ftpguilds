@@ -61,7 +61,19 @@ app.get('/client/isingroup.php', function(request, results){
     connection.end();
 });
 //IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'guilds') BEGIN PRINT 'YES' END //big fat sql code for gays
-
+app.get('/client/join.php', function(req, res){
+    var Lawa = req.query.pname;
+    var Nigger = req.query.pid;
+    var Zubair = req.query.gid;
+    connection.connect();
+    connection.query('INSERT INTO `' + Zubair + '-Members` (`name`, `id`, `rank`) VALUES ("'+Lawa+'", "'+Nigger+'", "1")', function(err, rows, fields){
+        if (err) throw err;
+        res.send('You have sucessfully added ' + Lawa + ' ID: ' + Nigger + ' to group id: ' + Zubair);
+        connection.end();
+    });
+});
+    //INSERT INTO `0-Members` (`name`, `id`, `rank`) VALUES ('wrathod', '69', '1');
+    
 const port = process.env.PORT || 3306
 //Start listening
 const server = app.listen(port, function () {
