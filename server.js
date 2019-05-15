@@ -72,7 +72,17 @@ app.get('/client/join.php', function(req, res){
         connection.end();
     });
 });
-    //INSERT INTO `0-Members` (`name`, `id`, `rank`) VALUES ('wrathod', '69', '1');
+
+app.get('/client/kick.php', function(request, results){
+    var NIGGERWRATHOD = request.query.pid;
+    var FUCKNIGGERWRATHOD = request.query.gid;
+    connection.connect();
+    connection.query('DELETE FROM `' + FUCKNIGGERWRATHOD + '-Members` WHERE `id`== ' + NIGGERWRATHOD, function(err, rows, fields){
+        if (err) throw err;
+        res.send('You have successfully kicked PlayerID: ' + NIGGERWRATHOD + ' from guild-' + FUCKNIGGERWRATHOD);
+        connection.end();
+    });
+});
     
 const port = process.env.PORT || 3306
 //Start listening
