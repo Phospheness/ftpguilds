@@ -83,6 +83,22 @@ app.get('/client/kick.php', function(request, results){
         connection.end();
     });
 });
+
+app.get("/client/isinanygroup.php", function(req, res){
+    var hokay = req.query.pid;
+    connection.connect();
+    res.send("Have the query run something along the lines of this comment, below")
+    //lua
+    // for _, guild in ipairs(guilds:GetChildren()) do
+    //     for _, item in ipairs(guild:GetChildren()) do
+    //         if item.Id == hokay then
+    //             print("Success"); output(PlayerInformation)
+    //    end;end;end
+  //  connection.query('', function(error, rows, fields){
+  //      if (error) throw error;
+  //      res.send("foetus deletus");
+    });
+});
     
 const port = process.env.PORT || 3306
 //Start listening
